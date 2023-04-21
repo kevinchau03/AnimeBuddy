@@ -2,11 +2,13 @@
 
 ## What it is
 
-This extension will allows users to track and store their favourite anime!
+This extension allows user to track and be notified of their favourite animes/movies.
 
 ## Technologies Used
 
-This extension uses React and API
+This extension uses React for the front-end.
 
-## LOL :D
+## How to use it
+
+Simply Clone this Project and add the uilt into your google extensions.
 
