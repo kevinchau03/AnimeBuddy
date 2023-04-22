@@ -2,29 +2,24 @@ import React, { useState } from 'react';
 import image from "./naruto.jpeg";
 import "../App.css";
 
-function Item() {
-    const [count, setCount] = useState(1);
-
-    function handleIncrement() {
-      setCount(count + 1);
-    }
+function Item(props) {
 
     return (
         <div className="container">
             <img 
-            src={image} 
-            alt="logo style=" 
-            style={{ maxWidth: '50px', maxHeight: '50px' }}
+            src={props.imageSrc} 
+            alt="logo" 
+            style={{ maxWidth: '75px', maxHeight: '75px' }}
             />
-            <h3 className="title"> Naruto Shippuden</h3>
+            <h4 className="title">{props.title}</h4>
             <div className="info-container">
                 <div className="status-box">
-                    <h3 classname="subtitle">Status:</h3>
-                    <p>Complete</p>
+                    <h4 className="subtitle">Status:</h4>
+                    <h5 style={{ color:'green' }}>{props.status}</h5>
                 </div>
                 <div className="days-box">
-                    <h3 className="subtitle">Days Until:</h3>
-                    <p>N/A</p>
+                    <h4 className="subtitle">Days Until:</h4>
+                    <h5 style={{ color:'red' }}>{props.date}</h5>
                 </div>
             </div>
         </div>
