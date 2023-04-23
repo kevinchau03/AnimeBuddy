@@ -1,37 +1,33 @@
 body {
   display: flex;
-  align-items: left;
+  justify-content: center;
   font-family: 'Quicksand', sans-serif;
-  background: -webkit-linear-gradient(360deg, #38aecc 10%, #347fb9 360%);
+  color: white;
+  background-color: #1c1c28;
 }
 .container {
   display: flex;
   padding: 10px;
-  width: 400px;
+  width: 350px;
   height: 80px;
   border: solid black;
   border-radius: 30px;
-  background-color: white;
-  gap: 14px;
-}
-.title {
-  word-wrap: break-word;
+  background-color: #28293d;
+  gap: 10px;
 }
 .search-bar {
   display: flex;
   align-items: left;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
-.add-button {
-  margin-left: 123px;
+.buttons {
+  margin-left: 40px;
   width: 123px;
   height: 40px;
   border-radius: 30px;
+  background-color: #3e7bfa;
   border: solid rgb(0, 0, 0);
-}
-.add-button:hover {
-  background-color: rgb(149, 149, 251);
 }
 .info-container {
   display: flex;
