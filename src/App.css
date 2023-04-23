@@ -11,9 +11,17 @@ body {
   width: 350px;
   height: 80px;
   border: solid black;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #28293d;
   gap: 10px;
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border: white;
+  border-radius: 50px;
 }
 .search-bar {
   display: flex;
@@ -22,14 +30,17 @@ body {
   gap: 10px;
 }
 .buttons {
-  margin-left: 40px;
+  margin-left: 123px;
   width: 123px;
   height: 40px;
   border-radius: 30px;
   background-color: #3e7bfa;
   border: solid rgb(0, 0, 0);
 }
+.buttons:hover {
+  background-color:white;
+}
 .info-container {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }

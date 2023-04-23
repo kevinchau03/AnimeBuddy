@@ -2,7 +2,6 @@ import React from 'react';
 import {Animated} from "react-animated-css";
 import './App.css';
 import SearchBar from "./components/SearchBar.js";
-import Item from "./components/Item.js";
 
 function App() {
   return (

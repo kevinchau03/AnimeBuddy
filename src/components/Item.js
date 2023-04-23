@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import image from "./naruto.jpeg";
 import "../App.css";
 
 function Item(props) {
-
     return (
         <div className="container">
+            <button className="close-button">❌</button>
             <img 
             src={props.imageSrc} 
             alt="logo" 

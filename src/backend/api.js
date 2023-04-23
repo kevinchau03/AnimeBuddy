@@ -6,7 +6,7 @@ const options = {
 	}
 };
 
-fetch('https://myanimelist.p.rapidapi.com/anime/1535', options)
+fetch('https://myanimelist.p.rapidapi.com/anime/search/Death%20Note', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
