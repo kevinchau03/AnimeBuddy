@@ -4,6 +4,8 @@ import {Animated} from 'react-animated-css';
 import axios from "axios";
 import Item from "./Item.js";
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 function SearchBar(props) {
   const [count, setCount] = useState(1);
   const [shouldAnimate, setShouldAnimate] = useState(true);
@@ -33,7 +35,7 @@ function SearchBar(props) {
     try {
       const response = await axios.get(`https://myanimelist.p.rapidapi.com/anime/${searchText}`, {
         headers: {
-          'X-RapidAPI-Key': '8d6c2faa3dmsh922150c5e564f61p1c755ajsn0fa40da5fcd0',
+          'X-RapidAPI-Key': apiKey,
           'X-RapidAPI-Host': 'myanimelist.p.rapidapi.com'
         }
       });
