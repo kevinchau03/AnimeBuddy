@@ -13,11 +13,11 @@ function Item(props) {
             <div className="info-container">
                 <div className="status-box">
                     <h4 className="subtitle">Status:</h4>
-                    <h5 style={{ color:'#37d989' }}>{props.status}</h5>
+                    <p style={{ color:'#37d989' }}>{props.status}</p>
                 </div>
                 <div className="days-box">
                     <h4 className="subtitle">Days Until:</h4>
-                    <h5 style={{ color:'#ff5c5a' }}>{props.date}</h5>
+                    <p style={{ color:'#ff5c5a' }}>{props.date + ' Days'}</p>
                 </div>
             </div>
         </div>

@@ -7,6 +7,9 @@ import Item from "./Item.js";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 function SearchBar(props) {
+  let newDate = new Date()
+  let date = newDate.getDay();    
+  const dayNames = ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"];
   const [count, setCount] = useState(1);
   const [shouldAnimate, setShouldAnimate] = useState(true);
   const [results, setResults] = useState([]);
@@ -39,11 +42,24 @@ function SearchBar(props) {
           'X-RapidAPI-Host': 'myanimelist.p.rapidapi.com'
         }
       });
+      let animeDay = response.data.information.broadcast;
+      let inputDay = dayNames.indexOf(animeDay.split(" ")[0]);
+      let daysUntilInputDay = (inputDay - date + 7) % 7;
+
+      let currstatus = ' ';
+      let currdate = ' ';
+      if (response.data.information.status === 'Currently Airing') {
+        currstatus = 'Airing'
+        currdate = daysUntilInputDay;
+      } else {
+        currstatus = 'Completed'
+        currdate = 'N/A'
+      }
       console.log(response.data)
       const newResult = {
         title: response.data.title_ov,
-        status: "On-going",
-        date: "3 Days",
+        status: currstatus,
+        date: currdate,
         imageSrc: response.data.picture_url
       };
       setResults([...results, newResult]);
@@ -73,17 +89,17 @@ function SearchBar(props) {
       <button className="buttons" onClick={handleSearchClick}>Search</button>
       <h3>Your Awesome Anime List:</h3>
       {results.map((result, index) => (
-  <Animated
-    key={index}
-    animationIn={shouldAnimate ? "bounceIn" : ""}
-  >
-    <Item
-      title={result.title}
-      status={result.status}
-      date={result.date}
-      imageSrc={result.imageSrc}
-    />
-  </Animated>
+      <Animated
+          key={index}
+          animationIn={shouldAnimate ? "bounceIn" : ""}
+        >
+          <Item
+            title={result.title}
+            status={result.status}
+            date={result.date}
+            imageSrc={result.imageSrc}
+          />
+      </Animated>
 ))}
     </div>
   );
