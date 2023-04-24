@@ -1,15 +1,17 @@
-import React from 'react';
 import {Animated} from "react-animated-css";
+import React, { useState } from "react";
 import './App.css';
 import SearchBar from "./components/SearchBar.js";
 
 function App() {
+  const [results, setResults] = useState([]);
+
   return (
     <div className="App">
-      <Animated animationIn='bounceInLeft' animationOut='fadeOut' isVisible={true}>
+      <Animated animationIn='fadeIn' animationOut='fadeOut' isVisible={true}>
         <h2>Welcome Back, Kevin Chau 👋</h2>
       </Animated>
-      <SearchBar/>
+      <SearchBar results={results} setResults={setResults} />
     </div>
   );
 }

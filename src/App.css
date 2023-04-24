@@ -6,23 +6,23 @@ body {
   background-color: #1c1c28;
 }
 .container {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   padding: 10px;
-  width: 350px;
-  height: 80px;
+  width: 370px;
+  height: 90px;
   border-radius: 10px;
-  background-color: #28293d;
-  gap: 10px;
+  background-color: #2b2d43;
+  gap: 15px;
 }
-
-.close-button {
-  position: absolute;
+.delete-button {
+  position:fixed;
+  font-size:10px;
   top: 0;
   right: 0;
+  border-radius: 50%;
+  border: none;
   background-color: white;
-  border: white;
-  border-radius: 50px;
 }
 .search-bar {
   display: flex;
@@ -35,13 +35,13 @@ body {
   width: 123px;
   height: 40px;
   border-radius: 30px;
+  border: none;
   background-color: #3e7bfa;
-  border: solid rgb(0, 0, 0);
 }
 .buttons:hover {
   background-color:white;
 }
 .info-container {
   display: flex;
-  gap: 10px;
+  gap: 30px;
 }
