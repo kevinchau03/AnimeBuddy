@@ -16,13 +16,11 @@ body {
   gap: 15px;
 }
 .delete-button {
-  position:fixed;
-  font-size:10px;
+  position: absolute;
   top: 0;
   right: 0;
-  border-radius: 50%;
-  border: none;
-  background-color: white;
+  background-color: transparent;
+  border:none;
 }
 .search-bar {
   display: flex;

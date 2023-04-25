@@ -1,4 +1,5 @@
 import "../App.css";
+import logo from './close.png';
 
 function Item(props) {
 
@@ -7,8 +8,8 @@ function Item(props) {
     }
 
     return (
-        <div className="container" onClick={delItem}>
-            <button className="delete-button">❌</button>
+        <div className="container">
+            <button className="delete-button" onClick={delItem} ><img src={logo} alt="delete"></img></button>
             <img 
             src={props.imageSrc} 
             alt="logo" 
