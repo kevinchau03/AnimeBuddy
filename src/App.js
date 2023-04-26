@@ -6,10 +6,10 @@ import SearchBar from "./components/SearchBar.js";
 function App() {
   const [results, setResults] = useState([
       {
-        title: "My Default Anime",
+        title: "Fullmetal Alchemist: Brotherhood",
         status: "Completed",
         date: "N/A",
-        imageSrc: "https://www.looper.com/img/gallery/why-toad-from-the-super-mario-bros-movie-sounds-so-familiar/l-intro-1665105469.jpg"
+        imageSrc: "https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
       }
   ]);
 

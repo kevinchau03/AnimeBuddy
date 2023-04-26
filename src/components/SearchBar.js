@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import {Animated} from 'react-animated-css';
 import axios from "axios";
@@ -72,7 +72,7 @@ function SearchBar(props) {
         onChange={handleInputChange}
         style={{
           width: '380px',
-          borderRadius: '20px',
+          borderRadius: '10px',
           padding: '10px',
           border: 'solid black',
           outline: 'none',
