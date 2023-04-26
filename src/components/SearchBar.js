@@ -71,7 +71,7 @@ function SearchBar(props) {
         value={searchText}
         onChange={handleInputChange}
         style={{
-          width: '350px',
+          width: '380px',
           borderRadius: '20px',
           padding: '10px',
           border: 'solid black',

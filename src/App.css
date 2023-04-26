@@ -3,7 +3,7 @@ body {
   justify-content: center;
   font-family: 'Quicksand', sans-serif;
   color: white;
-  background-color: #1c1c28;
+  background-color: #1b1b24;
 }
 .container {
   display: grid;
@@ -18,7 +18,8 @@ body {
 }
 
 .title {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .delete-button {
@@ -32,18 +33,17 @@ body {
   display: flex;
   align-items: left;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .buttons {
-  margin-left: 123px;
+  margin-left: 140px;
   width: 123px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: 10px;
   border: none;
   background-color: #3e7bfa;
-}
-.buttons:hover {
-  background-color:white;
+  color: white;
+  font-weight: bold;
 }
 .info-container {
   display: flex;

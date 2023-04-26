@@ -13,7 +13,7 @@ function Item(props) {
             <img 
             src={props.imageSrc} 
             alt="logo" 
-            style={{ maxWidth: '80px', maxHeight: '80px' }}
+            style={{ maxWidth: '80px', maxHeight: '80px'}}
             />
             <h4 className="title">{props.title}</h4>
             <div className="status-box">
