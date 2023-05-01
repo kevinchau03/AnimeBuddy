@@ -28,6 +28,7 @@ body {
   right: 0;
   background-color: transparent;
   border:none;
+  cursor: pointer;
 }
 .search-bar {
   display: flex;
@@ -44,6 +45,7 @@ body {
   background-color: #3e7bfa;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 .info-container {
   display: flex;
