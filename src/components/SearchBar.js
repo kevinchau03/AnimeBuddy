@@ -11,54 +11,38 @@ function SearchBar(props) {
   let date = newDate.getDay();    
   const dayNames = ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"];
   const [searchText, setSearchText] = useState("");
+  const [animeList, setAnimeList] = useState([]);
   const { results, setResults } = props;
 
   function handleInputChange(event) {
-    const value = event.target.value;
-    setSearchText(value);
+    setSearchText(event.target.value);
   }
 
   async function handleSearchClick() {
-    try {
-      const response = await axios.get(`https://myanimelist.p.rapidapi.com/anime/search/${searchText}`, {
-        headers: {
-          'X-RapidAPI-Key': apiKey,
-          'X-RapidAPI-Host': 'myanimelist.p.rapidapi.com'
-        }
-      });
-      let animeID = response.data[0].myanimelist_id;
-      const search = await axios.get(`https://myanimelist.p.rapidapi.com/anime/${animeID}`, {
-        headers: {
-          'X-RapidAPI-Key': apiKey,
-          'X-RapidAPI-Host': 'myanimelist.p.rapidapi.com'
-        }
-      });
-      
-      let animeDay = search.data.information.broadcast;
-      let inputDay = dayNames.indexOf(animeDay.split(" ")[0]);
-      let daysUntilInputDay = (inputDay - date + 7) % 7;
-      
-      let currstatus = ' ';
-      let currdate = ' ';
-      if (search.data.information.status === 'Currently Airing') {
-        currstatus = 'Airing'
-        currdate = daysUntilInputDay;
-      } else {
-        currstatus = 'Completed'
-        currdate = 'N/A'
+      try {
+        const url = new URL('https://anime-db.p.rapidapi.com/anime');
+        url.search = new URLSearchParams({
+          page: '1',
+          size: '10',
+          search: searchText
+        }).toString();
+    
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+          }
+        });
+        const data = await response.json();
+        const firstAnime = data.data[0];
+        console.log(firstAnime);
+        setAnimeList(data.data);
+      } catch (error) {
+        console.error(error);
       }
-        const newResult = {
-        title: search.data.title_ov,
-        status: currstatus,
-        date: currdate,
-        imageSrc: search.data.picture_url
-      };
-      setResults([...results, newResult]);
-      setSearchText("");
-    } catch (error) {
-      console.error(error)
     }
-  }
+    
   
   return (
     <div className="search-bar">
@@ -79,6 +63,11 @@ function SearchBar(props) {
         }}
       />
       <button className="buttons" onClick={handleSearchClick}>Add To List</button>
+      <ul>
+      {animeList.map(anime => (
+        <li key={anime.id}>{anime.title}</li>
+        ))}
+    </ul>
       <h3>Your Awesome Anime List:</h3>
       {results.map((result, index) => (
       <Animated
