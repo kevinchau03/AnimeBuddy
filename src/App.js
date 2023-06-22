@@ -12,7 +12,6 @@ function App() {
         imageSrc: "https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
       }
   ]);
-
   return (
     <div className="App">
       <Animated animationIn='fadeIn' animationOut='fadeOut' isVisible={true}>

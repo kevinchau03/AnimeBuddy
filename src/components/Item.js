@@ -15,7 +15,10 @@ function Item(props) {
             alt="logo" 
             style={{ maxWidth: '80px', maxHeight: '80px'}}
             />
-            <h4 className="title">{props.title}</h4>
+            <div className="title-box">
+                <h4 className="subtitle">Title:</h4>
+                <p className="title">{props.title}</p>
+            </div>
             <div className="status-box">
                 <h4 className="subtitle">Status:</h4>
                 <p style={{ color:'#37d989' }}>{props.status}</p>

@@ -7,8 +7,7 @@ body {
 }
 .container {
   display: grid;
-  align-items: center;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 10px;
   width: 380px;
   height: 90px;
@@ -16,10 +15,12 @@ body {
   background-color: #2b2d43;
   gap: 15px;
 }
-
 .title {
   font-size: 14px;
   font-weight: bold;
+}
+.subtitle {
+  font-size: 12px;
 }
 
 .delete-button {
@@ -30,12 +31,12 @@ body {
   border:none;
   cursor: pointer;
 }
-.search-bar {
+.search-container {
   display: flex;
-  align-items: left;
   flex-direction: column;
   gap: 20px;
 }
+
 .buttons {
   margin-left: 140px;
   width: 123px;
@@ -50,4 +51,21 @@ body {
 .info-container {
   display: flex;
   gap: 30px;
+}
+.suggested {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  height: auto;
+  background-color: white;
+  list-style: none;
+  color: black;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+.suggested-item {
+  border: 2px solid rgb(0, 0, 0);
+  width:auto;
+  cursor: pointer;
 }
